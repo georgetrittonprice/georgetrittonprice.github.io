@@ -152,7 +152,9 @@
     .chart-title { font-size: 13px; font-weight: 600; color: var(--ink); }
     .plot { height: 112px; display: flex; align-items: flex-end; gap: 3px; margin-top: 12px; }
     .plot i { display: block; flex: 1; height: calc(var(--v) / var(--max) * 100%); background: var(--green); border-radius: 2px 2px 0 0; opacity: 0.9; }
-    .months { display: flex; justify-content: space-between; margin-top: 6px; color: var(--quiet); font-size: 10px; letter-spacing: 0.02em; }
+    .chart-metric { margin-top: 8px; color: var(--green); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .chart-metric.quiet { color: var(--quiet); font-weight: 500; }
+    .up { width: 16px; height: 16px; flex: none; }
     .case:first-of-type { padding-top: 0; border-top: 0; }
     .num {
       margin: 0;
@@ -244,16 +246,19 @@
                 <p class="chart-title">First payment</p>
                 <div class="plot" style="--max:250"><i style="--v:45"></i><i style="--v:25"></i><i style="--v:85"></i><i style="--v:50"></i><i style="--v:35"></i><i style="--v:40"></i><i style="--v:60"></i><i style="--v:95"></i><i style="--v:155"></i><i style="--v:195"></i><i style="--v:210"></i><i style="--v:115"></i></div>
                 <p class="months"><span>Jan</span><span>Dec 2025</span></p>
+                <p class="chart-metric quiet">Peaked at $210k</p>
               </div>
               <div class="chart">
                 <p class="chart-title">Payments after the first</p>
                 <div class="plot" style="--max:250"><i style="--v:130"></i><i style="--v:120"></i><i style="--v:110"></i><i style="--v:140"></i><i style="--v:160"></i><i style="--v:170"></i><i style="--v:190"></i><i style="--v:180"></i><i style="--v:200"></i><i style="--v:220"></i><i style="--v:210"></i><i style="--v:200"></i></div>
                 <p class="months"><span>Jan</span><span>Dec 2025</span></p>
+                <p class="chart-metric quiet">$110k to $220k</p>
               </div>
               <div class="chart">
                 <p class="chart-title">The whole month</p>
                 <div class="plot" style="--max:500"><i style="--v:180"></i><i style="--v:160"></i><i style="--v:200"></i><i style="--v:200"></i><i style="--v:210"></i><i style="--v:190"></i><i style="--v:250"></i><i style="--v:300"></i><i style="--v:340"></i><i style="--v:420"></i><i style="--v:420"></i><i style="--v:330"></i></div>
                 <p class="months"><span>Jan</span><span>Dec 2025</span></p>
+                <p class="chart-metric"><svg class="up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>$180k to $420k</p>
               </div>
             </div>
             <figcaption>2025 on that floor. First payments, the payments that followed, and the month together.</figcaption>
