@@ -163,7 +163,9 @@
       position: absolute; left: 36%; right: 6%; top: 2px; height: 52%;
       overflow: visible; pointer-events: none;
     }
-    .chart-metric.quiet { color: var(--quiet); font-weight: 500; }
+    .months { display: flex; gap: 3px; margin-top: 6px; }
+    .months span { flex: 1; text-align: center; color: var(--quiet); font-size: 9px; line-height: 1.1; }
+    .chart-metric { margin-top: 8px; color: var(--green); font-size: 13px; font-weight: 600; }
     .up { width: 16px; height: 16px; flex: none; }
     .case:first-of-type { padding-top: 0; border-top: 0; }
     .num {
@@ -259,14 +261,17 @@
                   <span class="start-mark">Started<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 1v8"/><path d="M3 6l3 3 3-3"/></svg></span>
                   <svg class="grow-mark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 34 C 30 32, 55 8, 92 6" fill="none" stroke="#0f3b2e" stroke-width="1.6" vector-effect="non-scaling-stroke"/><path d="M84 2 L96 6 L86 12" fill="none" stroke="#0f3b2e" stroke-width="1.6" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>
                 </div>
-                <p class="months"><span>Jan</span><span>Dec 2025</span></p>
+                <p class="months"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></p>
                 <p class="chart-metric">Peaked at $210k</p>
               </div>
               <div class="chart">
                 <p class="chart-title">The whole month</p>
-                <div class="plot" style="--max:500"><i style="--v:180"></i><i style="--v:160"></i><i style="--v:200"></i><i style="--v:200"></i><i style="--v:210"></i><i style="--v:190"></i><i style="--v:250"></i><i style="--v:300"></i><i style="--v:340"></i><i style="--v:420"></i><i style="--v:420"></i><i style="--v:330"></i></div>
-                <p class="months"><span>Jan</span><span>Dec 2025</span></p>
-                <p class="chart-metric quiet">$180k to $420k</p>
+                <div class="plot climb" style="--max:100"><i style="--v:24"></i><i style="--v:18"></i><i style="--v:31"></i><i style="--v:31"></i><i style="--v:34"></i><i style="--v:27"></i><i style="--v:46"></i><i style="--v:62"></i><i style="--v:75"></i><i style="--v:100"></i><i style="--v:100"></i><i style="--v:72"></i>
+                  <span class="start-mark">Started<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 1v8"/><path d="M3 6l3 3 3-3"/></svg></span>
+                  <svg class="grow-mark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 34 C 30 32, 55 8, 92 6" fill="none" stroke="#0f3b2e" stroke-width="1.6" vector-effect="non-scaling-stroke"/><path d="M84 2 L96 6 L86 12" fill="none" stroke="#0f3b2e" stroke-width="1.6" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>
+                </div>
+                <p class="months"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></p>
+                <p class="chart-metric">$180k to $420k</p>
               </div>
             </div>
             <figcaption>2025 on that floor. New cash collected, and the whole month.</figcaption>
