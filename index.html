@@ -70,6 +70,12 @@
     }
     .btn.light { background: #fff; color: var(--green); border: 1px solid var(--green); }
     .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .wins-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 8px;
+      border: 1px solid var(--line); color: var(--green);
+    }
+    .wins-link svg { width: 20px; height: 20px; }
     .text-link {
       display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px;
       color: var(--green); font-weight: 600; font-size: 15px; text-decoration: none;
@@ -186,6 +192,9 @@
       <nav class="nav-links" aria-label="Page">
         <a class="text-link" href="https://www.linkedin.com/in/georgetrittonprice/">LinkedIn</a>
         <a class="text-link" href="https://www.1close.ai/free-book">Free book</a>
+        <a class="wins-link" href="#results" aria-label="Wins wall">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4.5A2.5 2.5 0 0 0 7 11"/><path d="M17 6h2.5A2.5 2.5 0 0 1 17 11"/></svg>
+        </a>
         <a class="btn" href="https://www.1close.ai/get-started">Book a call</a>
       </nav>
     </div>
@@ -221,10 +230,6 @@
               <figcaption>The sales team at EmailMarketing.com.</figcaption>
             </figure>
           </div>
-          <figure class="proof-shot">
-            <div class="frame"><img src="assets/emailmarketing-closes.jpg" alt="The EmailMarketing.com sales channel, names blurred, posting the day's closes and that the month should be over $200,000" /></div>
-            <figcaption>The sales channel that afternoon. Every name except mine is blurred. The closes posted are $3,000, $2,000, $10,200, $9,800 and $2,000. One line says the month should be over $200,000, and the next says a card delay kept it from being a $30,000 collected day.</figcaption>
-          </figure>
         </article>
 
         <article class="case">
@@ -361,6 +366,13 @@
         <h2>What they wrote when it landed.</h2>
         <p>These are their messages. The line under each one is the result.</p>
         <div class="wall">
+          <article class="result feature">
+            <div class="shot"><img src="assets/emailmarketing-closes.jpg" alt="The EmailMarketing.com sales channel posting the day's closes" /></div>
+            <div class="result-body">
+              <p class="result-line"><span class="arrow" aria-hidden="true"></span>Over $200,000 that month</p>
+              <p class="result-note">The closes posted that afternoon were $3,000, $2,000, $10,200, $9,800 and $2,000. A card delay kept it from a $30,000 collected day.</p>
+            </div>
+          </article>
           <article class="result">
             <div class="shot"><img src="assets/result-jonathan.jpg" alt="Jonathan Fox writing that he closed two full price clients" /></div>
             <div class="result-body">
