@@ -130,7 +130,10 @@
       width: min(100%, 300px);
       height: auto;
       justify-self: center;
+      align-self: end;
+      filter: drop-shadow(0 14px 10px rgba(15, 59, 46, 0.16));
     }
+    .hero { padding-bottom: 0; }
     .book-cover { display: block; width: 200px; max-width: 100%; height: auto; margin: 0 auto; }
     figure { margin: 0; }
     figcaption {
@@ -191,8 +194,8 @@
       h1 { font-size: 56px; }
       h2 { font-size: 36px; }
       section { padding: 80px 0; }
-      .hero-grid { grid-template-columns: 1.3fr 0.7fr; align-items: end; }
-      .portrait { width: min(100%, 380px); justify-self: end; }
+      .hero-grid { grid-template-columns: 1.3fr 0.7fr; align-items: start; }
+      .portrait { width: min(100%, 380px); justify-self: end; align-self: end; }
       .split { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 48px; }
       .split.flip { grid-template-columns: 0.8fr 1.2fr; }
       .gallery { grid-template-columns: 1fr 1fr 1fr; }
@@ -350,10 +353,6 @@
         <figure>
           <div class="frame"><img src="assets/table.jpg" alt="George in a working conversation at an outdoor table" /></div>
           <figcaption>Working it through.</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><img src="assets/conversation.jpg" alt="George in conversation with a colleague at an event" /></div>
-          <figcaption>Between sessions.</figcaption>
         </figure>
       </div>
     </section>
