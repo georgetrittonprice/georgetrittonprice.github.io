@@ -127,8 +127,9 @@
     .arrow { flex: none; width: 18px; height: 18px; margin-top: 2px; background: var(--green); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
     .result-note { margin: 6px 0 0; color: var(--body); font-size: 14px; }
     .portrait {
-      width: min(100%, 280px);
-      border-radius: 12px;
+      width: min(100%, 300px);
+      height: auto;
+      justify-self: center;
     }
     .book-cover { display: block; width: 200px; max-width: 100%; height: auto; margin: 0 auto; }
     figure { margin: 0; }
@@ -191,7 +192,7 @@
       h2 { font-size: 36px; }
       section { padding: 80px 0; }
       .hero-grid { grid-template-columns: 1.3fr 0.7fr; align-items: end; }
-      .portrait { width: 100%; justify-self: end; }
+      .portrait { width: min(100%, 380px); justify-self: end; }
       .split { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 48px; }
       .split.flip { grid-template-columns: 0.8fr 1.2fr; }
       .gallery { grid-template-columns: 1fr 1fr 1fr; }
@@ -232,7 +233,7 @@
           <p class="lead">The calls are already booked. The gap is what happens on them, and what happens after. I audit the sales process, install 1Close, and coach the team on the gaps their own calls show.</p>
           <p><a class="btn" href="https://www.1close.ai/get-started">Book a call</a></p>
         </div>
-        <img class="portrait" src="assets/george.png" alt="George Tritton-Price" />
+        <img class="portrait" src="assets/george-hero.png" alt="George Tritton-Price" />
       </div>
     </section>
 
@@ -296,8 +297,8 @@
             </div>
           </div>
           <figure style="margin-top: 18px;">
-            <div class="frame"><img src="assets/lectern.jpg" alt="George teaching at the lectern at Elite CEOs" /></div>
-            <figcaption>Teaching at Elite CEOs.</figcaption>
+            <div class="frame"><img src="assets/teaching.jpg" alt="George speaking at Elite CEOs, the slide about using AI in his businesses" /></div>
+            <figcaption>Speaking at Elite CEOs.</figcaption>
           </figure>
         </article>
 
