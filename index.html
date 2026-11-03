@@ -68,7 +68,9 @@
       font-size: 15px;
       text-decoration: none;
     }
-    .btn.light { background: #fff; color: var(--green); border: 1px solid var(--green); }
+    .step-icon { width: 28px; height: 28px; color: var(--green); display: block; margin-bottom: 8px; }
+    .coach-video { width: 100%; max-width: 860px; margin-top: 22px; border-radius: 12px; background: #111; display: block; }
+    .btn.big { min-height: 52px; padding: 0 28px; font-size: 17px; }
     .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
     .wins-link {
       display: inline-flex; align-items: center; justify-content: center;
@@ -397,17 +399,20 @@
         <h2>Audit. Install. Coach the team.</h2>
         <div class="steps">
           <div>
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
             <p class="num">01</p>
             <h3>Audit</h3>
             <p>We read the calls the team is already taking. Where a deal dies. What the closer did in that moment. What a better call would have asked.</p>
             <p>You get the readout. The readout is the thing we stand behind.</p>
           </div>
           <div>
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
             <p class="num">02</p>
             <h3>Install</h3>
             <p>1Close goes onto those calls. It identifies the opportunity and puts the next action in front of the closer. It shows up on the call, in Slack, and in the inbox.</p>
           </div>
           <div>
+            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19v-2a4 4 0 0 1 4-4h2"/><circle cx="9" cy="7" r="3"/><path d="M16 11l2 2 4-4"/></svg>
             <p class="num">03</p>
             <h3>Coach the team</h3>
             <p>I coach the team on the gaps the calls revealed. The current install is four calls, across four weeks when the team is at normal volume.</p>
@@ -419,23 +424,12 @@
 
     <section class="band" id="product">
       <div class="wrap">
-        <p class="kicker">After the coaching block</p>
-        <h2>What stays on when I am not in the room</h2>
-        <div class="pillars" style="margin-top: 28px;">
-          <figure>
-            <div class="frame"><img src="assets/live-coach.png" alt="Live Coach naming the next move on a call" /></div>
-            <figcaption>Live Coach, on the call. Demo deal.</figcaption>
-          </figure>
-          <div>
-            <h3>Help win the call</h3>
-            <p>Live Coach is in the closer’s ear. It names what the buyer just said, and the move to make next.</p>
-            <h3 style="margin-top: 22px;">Help progress the deal</h3>
-            <p>After the call, the team gets a summary. In the morning, a briefing. A list of the deals the record reads as closable. A plain recap the closer can send to the buyer. A short brief before the next call.</p>
-            <h3 style="margin-top: 22px;">Help improve the team</h3>
-            <p>Once a week, the objections the team actually heard, and a report on each closer. Each closer gets one drill, taken from a moment on their own calls.</p>
-            <p>When the coaching block ends, this stays on. It reads the calls and prompts the next action.</p>
-          </div>
-        </div>
+        <p class="kicker">On the call</p>
+        <h2>Live Coach</h2>
+        <video class="coach-video" controls playsinline poster="assets/live-coach.png">
+          <source src="assets/live-coach-demo.mp4" type="video/mp4" />
+        </video>
+        <p><a class="btn big" href="https://www.1close.ai">Discover 1Close.ai</a></p>
       </div>
     </section>
 
