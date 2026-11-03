@@ -131,13 +131,27 @@
     .arrow { flex: none; width: 18px; height: 18px; margin-top: 2px; background: var(--green); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
     .result-note { margin: 6px 0 0; color: var(--body); font-size: 14px; }
     .portrait {
-      width: min(100%, 300px);
+      width: min(100%, 280px);
       height: auto;
+      border-radius: 12px;
       justify-self: center;
-      align-self: end;
-      filter: drop-shadow(0 14px 10px rgba(15, 59, 46, 0.16));
     }
-    .hero { padding-bottom: 0; }
+    .offer-cards { display: grid; gap: 16px; margin-top: 28px; }
+    .offer { border-radius: 16px; padding: 22px 22px 18px; }
+    .offer.lead { background: var(--green); color: #fff; }
+    .offer.lead h3, .offer.lead p, .offer.lead li { color: #fff; }
+    .offer.soft { background: #fff; border: 1px solid var(--line); }
+    .offer-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .offer-kicker { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+    .offer-pill { margin: 0; background: #d7efe4; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; border-radius: 999px; padding: 5px 10px; }
+    .offer h3 { margin-top: 14px; font-size: 28px; letter-spacing: -0.03em; line-height: 1.1; }
+    .offer .for { margin-top: 8px; font-size: 15px; }
+    .offer ul { list-style: none; padding: 0; margin: 18px 0 0; }
+    .offer li { position: relative; padding: 7px 0 7px 22px; }
+    .offer li:before { content: "✓"; position: absolute; left: 0; font-weight: 700; }
+    .offer.lead li:before { color: #d7efe4; }
+    .offer.soft li:before { color: var(--green); }
+    .offer .fine { margin-top: 14px; font-size: 13px; }
     .book-cover { display: block; width: 200px; max-width: 100%; height: auto; margin: 0 auto; }
     figure { margin: 0; }
     figcaption {
@@ -207,8 +221,9 @@
       h2 { font-size: 36px; }
       .wins-title { font-size: 56px; }
       section { padding: 80px 0; }
-      .hero-grid { grid-template-columns: 1.3fr 0.7fr; align-items: start; }
-      .portrait { width: min(100%, 380px); justify-self: end; align-self: end; }
+      .hero-grid { grid-template-columns: 1.3fr 0.7fr; align-items: end; }
+      .portrait { width: 100%; justify-self: end; }
+      .offer-cards { grid-template-columns: 1fr 1fr; }
       .split { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 48px; }
       .split.flip { grid-template-columns: 0.8fr 1.2fr; }
       .gallery { grid-template-columns: 1fr 1fr 1fr; }
@@ -249,7 +264,7 @@
           <p class="lead">The calls are already booked. The gap is what happens on them, and what happens after. I audit the sales process, install 1Close, and coach the team on the gaps their own calls show.</p>
           <p><a class="btn" href="https://www.1close.ai/get-started">Book a call</a></p>
         </div>
-        <img class="portrait" src="assets/george-hero.png" alt="George Tritton-Price" />
+        <img class="portrait" src="assets/george.png" alt="George Tritton-Price" />
       </div>
     </section>
 
@@ -313,7 +328,7 @@
             </div>
           </div>
           <figure style="margin-top: 18px;">
-            <div class="frame"><img src="assets/teaching.jpg" alt="George speaking at Elite CEOs, the slide about using AI in his businesses" /></div>
+            <div class="frame"><img src="assets/lectern.jpg" alt="George speaking at Elite CEOs in a white polo" /></div>
             <figcaption>Speaking at Elite CEOs.</figcaption>
           </figure>
         </article>
@@ -397,27 +412,32 @@
       <div class="wrap">
         <p class="kicker">The work</p>
         <h2>Audit. Install. Coach the team.</h2>
-        <div class="steps">
-          <div>
-            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-            <p class="num">01</p>
-            <h3>Audit</h3>
-            <p>We read the calls the team is already taking. Where a deal dies. What the closer did in that moment. What a better call would have asked.</p>
-            <p>You get the readout. The readout is the thing we stand behind.</p>
-          </div>
-          <div>
-            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
-            <p class="num">02</p>
-            <h3>Install</h3>
-            <p>1Close goes onto those calls. It identifies the opportunity and puts the next action in front of the closer. It shows up on the call, in Slack, and in the inbox.</p>
-          </div>
-          <div>
-            <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19v-2a4 4 0 0 1 4-4h2"/><circle cx="9" cy="7" r="3"/><path d="M16 11l2 2 4-4"/></svg>
-            <p class="num">03</p>
-            <h3>Coach the team</h3>
-            <p>I coach the team on the gaps the calls revealed. The current install is four calls, across four weeks when the team is at normal volume.</p>
-            <p>Ongoing coaching for the team is optional. Coaching one closer, or taking the sales manager seat myself, is separate work.</p>
-          </div>
+        <div class="offer-cards">
+          <article class="offer lead">
+            <div class="offer-top">
+              <p class="offer-kicker">02 / TEAM</p>
+              <p class="offer-pill">LEAD OFFER</p>
+            </div>
+            <h3>Team Sales Performance</h3>
+            <p class="for">For founders with a sales team.</p>
+            <ul>
+              <li>Audit the calls and process</li>
+              <li>Install 1Close</li>
+              <li>Weekly team coaching</li>
+            </ul>
+            <p class="fine">Group coaching. Individual sessions are separate.</p>
+          </article>
+          <article class="offer soft">
+            <p class="offer-kicker">03 / SOFTWARE</p>
+            <h3>1Close for Your Sales Manager</h3>
+            <p class="for">For teams with sales leadership.</p>
+            <ul>
+              <li>Install and configure 1Close</li>
+              <li>Live guidance and deal memory</li>
+              <li>Visibility into rep performance</li>
+            </ul>
+            <p class="fine">Your manager leads the team.</p>
+          </article>
         </div>
       </div>
     </section>
