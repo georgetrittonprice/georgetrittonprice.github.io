@@ -120,7 +120,7 @@
     section { padding: 48px 0; scroll-margin-top: 80px; }
     .band { background: var(--paper); }
     .hero-grid, .split, .steps, .pillars { display: grid; gap: 28px; }
-    .gallery { display: grid; gap: 12px; margin-top: 28px; }
+    .pair { display: grid; gap: 12px; margin-top: 28px; }
     .wall { display: grid; gap: 16px; margin-top: 28px; }
     .result-link { display: block; color: inherit; text-decoration: none; }
     .result-link:hover .result { border-color: var(--green); }
@@ -227,6 +227,7 @@
       .split { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 48px; }
       .split.flip { grid-template-columns: 0.8fr 1.2fr; }
       .gallery { grid-template-columns: 1fr 1fr 1fr; }
+      .pair { grid-template-columns: 1fr 1fr; }
       .wall { grid-template-columns: 1fr 1fr; }
       .result.feature { grid-column: 1 / -1; }
       .result.feature .shot img { max-width: 760px; }
@@ -353,10 +354,14 @@
           <figcaption>Speaking at Elite CEOs.</figcaption>
         </figure>
       </div>
-      <div class="wrap" style="margin-top: 28px;">
-        <figure style="max-width: 420px;">
+      <div class="wrap pair">
+        <figure>
           <div class="frame"><img src="assets/daniel.jpg" alt="George with Daniel Priestley" /></div>
           <figcaption>With Daniel Priestley.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="assets/ryan.jpg" alt="George with Ryan Zofay" /></div>
+          <figcaption>With Ryan Zofay.</figcaption>
         </figure>
       </div>
       <div class="wrap gallery">
