@@ -6,7 +6,7 @@
   <title>George Tritton-Price</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink: #0a0a0a;
@@ -103,6 +103,7 @@
     h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.12; font-weight: 600; }
     h1 { margin: 12px 0 0; font-size: 34px; }
     h2 { margin: 0; font-size: 28px; }
+    .wins-title { font-family: Fraunces, Georgia, serif; font-weight: 560; font-size: 44px; letter-spacing: -0.03em; line-height: 1.05; }
     h3 { margin: 0; font-size: 20px; }
     p { margin: 12px 0 0; color: var(--body); }
     .kicker {
@@ -193,6 +194,7 @@
     @media (min-width: 800px) {
       h1 { font-size: 56px; }
       h2 { font-size: 36px; }
+      .wins-title { font-size: 56px; }
       section { padding: 80px 0; }
       .hero-grid { grid-template-columns: 1.3fr 0.7fr; align-items: start; }
       .portrait { width: min(100%, 380px); justify-self: end; align-self: end; }
@@ -431,7 +433,7 @@
     <section id="results">
       <div class="wrap">
         <p class="kicker">From the people I coached</p>
-        <h2>What they wrote when it landed.</h2>
+        <h2 class="wins-title">Wins Wall</h2>
         <p>These are their messages. The line under each one is the result.</p>
         <div class="wall">
           <article class="result feature">
