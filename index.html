@@ -149,7 +149,15 @@
       border-radius: 12px;
       overflow: hidden;
     }
-    .frame img { width: 100%; }
+    .frame.has-badge { position: relative; }
+    .inc-badge {
+      position: absolute; top: 8px; right: 8px; z-index: 1;
+      background: #111; color: #fff; border-radius: 4px;
+      padding: 4px 6px 5px; text-align: center; line-height: 1.05;
+      font-size: 8px; font-weight: 700; letter-spacing: 0.12em;
+    }
+    .inc-badge strong { display: block; font-size: 12px; letter-spacing: 0.04em; }
+    .inc-badge.inline { position: static; display: inline-block; margin-left: 8px; vertical-align: middle; }
     .case { padding-top: 36px; border-top: 1px solid var(--line); }
     .case-study figcaption { margin-top: 14px; color: var(--ink); font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
     .charts { display: grid; gap: 12px; }
@@ -256,7 +264,7 @@
               <p>Monthly revenue went from $180,000 to $437,000 in eight months, with the same two closers. I installed one way of running the calls, and a manager rhythm that did not depend on me sitting in every one.</p>
             </div>
             <figure>
-              <div class="frame"><img src="assets/emailmarketing-team.png" alt="George with the EmailMarketing.com sales team on a video call" /></div>
+              <div class="frame has-badge"><img src="assets/emailmarketing-team.png" alt="George with the EmailMarketing.com sales team on a video call" /><span class="inc-badge">INC.<strong>5000</strong></span></div>
               <figcaption>The sales team at EmailMarketing.com.</figcaption>
             </figure>
           </div>
@@ -309,7 +317,7 @@
         </article>
 
         <article class="case">
-          <h3>Publishing.com</h3>
+          <h3>Publishing.com <span class="inc-badge inline">INC.<strong>5000</strong></span></h3>
           <p>Enrollment Director inside a nine-figure education business. I closed $588,000 in two and a half months.</p>
         </article>
       </div>
