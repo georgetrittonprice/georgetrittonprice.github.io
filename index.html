@@ -47,6 +47,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 12px;
       min-height: 64px;
     }
@@ -71,7 +72,7 @@
     .step-icon { width: 28px; height: 28px; color: var(--green); display: block; margin-bottom: 8px; }
     .coach-video { width: 100%; max-width: 860px; margin-top: 22px; border-radius: 12px; background: #111; display: block; }
     .btn.big { min-height: 52px; padding: 0 28px; font-size: 17px; }
-    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; min-width: 0; flex: 1 1 220px; }
     .wins-link {
       display: inline-flex; align-items: center; justify-content: center;
       width: 44px; height: 44px; border-radius: 8px;
@@ -118,6 +119,18 @@
     }
     .lead { font-size: 18px; max-width: 38rem; }
     section { padding: 48px 0; scroll-margin-top: 80px; }
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 640px;
+      padding: 240px 0 36px;
+      background:
+        linear-gradient(to top, #fff 0%, #fff 34%, rgba(255,255,255,0.94) 48%, rgba(255,255,255,0.28) 66%, rgba(255,255,255,0) 80%),
+        url("assets/hero-bg.jpg") 72% 18% / cover no-repeat;
+    }
+    .hero-copy { max-width: 34rem; }
+    .hero > .wrap { min-width: 0; }
     .band { background: var(--paper); }
     .hero-grid, .split, .steps, .pillars { display: grid; gap: 28px; }
     .pair { display: grid; gap: 12px; margin-top: 28px; }
@@ -221,7 +234,15 @@
       h2 { font-size: 36px; }
       .wins-title { font-size: 56px; }
       section { padding: 80px 0; }
-      .hero-grid { grid-template-columns: 1.3fr 0.7fr; align-items: end; }
+      .hero {
+        align-items: center;
+        min-height: 680px;
+        padding: 72px 0;
+        background:
+          linear-gradient(90deg, #fff 0%, #fff 34%, rgba(255,255,255,0.96) 48%, rgba(255,255,255,0.4) 62%, rgba(255,255,255,0) 74%),
+          url("assets/hero-bg.jpg") 72% center / cover no-repeat;
+      }
+      .hero-grid { grid-template-columns: 1fr; }
       .portrait { width: 100%; justify-self: end; }
       .offer-cards { grid-template-columns: 1fr 1fr; }
       .split { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 48px; }
@@ -259,13 +280,12 @@
   <main id="top">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
+        <div class="hero-copy">
           <p class="kicker">Founder of 1Close.ai &amp; Author of The Easiest Sales Method on the Planet.</p>
           <h1>I raise close rates with coaching and AI.</h1>
           <p class="lead">The calls are already booked. The gap is what happens on them, and what happens after. I audit the sales process, install 1Close, and coach the team on the gaps their own calls show.</p>
           <p><a class="btn" href="https://www.1close.ai/get-started">Book a call</a></p>
         </div>
-        <img class="portrait" src="assets/george.png" alt="George Tritton-Price" />
       </div>
     </section>
 
