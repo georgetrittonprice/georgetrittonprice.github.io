@@ -152,7 +152,17 @@
     .chart-title { font-size: 13px; font-weight: 600; color: var(--ink); }
     .plot { height: 112px; display: flex; align-items: flex-end; gap: 3px; margin-top: 12px; }
     .plot i { display: block; flex: 1; height: calc(var(--v) / var(--max) * 100%); background: var(--green); border-radius: 2px 2px 0 0; opacity: 0.9; }
-    .chart-metric { margin-top: 8px; color: var(--green); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .plot.climb { position: relative; }
+    .start-mark {
+      position: absolute; left: 28%; top: 2px; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 1px;
+      color: var(--green); font-size: 9px; font-weight: 600; line-height: 1; pointer-events: none;
+    }
+    .start-mark svg { width: 12px; height: 12px; }
+    .grow-mark {
+      position: absolute; left: 36%; right: 6%; top: 2px; height: 52%;
+      overflow: visible; pointer-events: none;
+    }
     .chart-metric.quiet { color: var(--quiet); font-weight: 500; }
     .up { width: 16px; height: 16px; flex: none; }
     .case:first-of-type { padding-top: 0; border-top: 0; }
@@ -256,9 +266,12 @@
               </div>
               <div class="chart">
                 <p class="chart-title">The whole month</p>
-                <div class="plot" style="--max:500"><i style="--v:180"></i><i style="--v:160"></i><i style="--v:200"></i><i style="--v:200"></i><i style="--v:210"></i><i style="--v:190"></i><i style="--v:250"></i><i style="--v:300"></i><i style="--v:340"></i><i style="--v:420"></i><i style="--v:420"></i><i style="--v:330"></i></div>
+                <div class="plot climb" style="--max:500"><i style="--v:180"></i><i style="--v:160"></i><i style="--v:200"></i><i style="--v:200"></i><i style="--v:210"></i><i style="--v:190"></i><i style="--v:250"></i><i style="--v:300"></i><i style="--v:340"></i><i style="--v:420"></i><i style="--v:420"></i><i style="--v:330"></i>
+                  <span class="start-mark">Started<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 1v8"/><path d="M3 6l3 3 3-3"/></svg></span>
+                  <svg class="grow-mark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 34 C 30 32, 55 8, 92 6" fill="none" stroke="#0f3b2e" stroke-width="1.6" vector-effect="non-scaling-stroke"/><path d="M84 2 L96 6 L86 12" fill="none" stroke="#0f3b2e" stroke-width="1.6" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>
+                </div>
                 <p class="months"><span>Jan</span><span>Dec 2025</span></p>
-                <p class="chart-metric"><svg class="up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>$180k to $420k</p>
+                <p class="chart-metric">$180k to $420k</p>
               </div>
             </div>
             <figcaption>2025 on that floor. First payments, the payments that followed, and the month together.</figcaption>
