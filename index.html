@@ -47,7 +47,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 12px;
       min-height: 64px;
     }
@@ -72,13 +71,71 @@
     .step-icon { width: 28px; height: 28px; color: var(--green); display: block; margin-bottom: 8px; }
     .coach-video { width: 100%; max-width: 860px; margin-top: 22px; border-radius: 12px; background: #111; display: block; }
     .btn.big { min-height: 52px; padding: 0 28px; font-size: 17px; }
-    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; min-width: 0; flex: 1 1 220px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+    .menu-btn {
+      display: none;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 0;
+      cursor: pointer;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      width: 18px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 1px;
+    }
+    .menu-btn span { top: 21px; }
+    .menu-btn span:before { top: -6px; }
+    .menu-btn span:after { top: 6px; }
+    .menu-btn.open span { background: transparent; }
+    .menu-btn.open span:before { top: 0; transform: rotate(45deg); }
+    .menu-btn.open span:after { top: 0; transform: rotate(-45deg); }
+    .wins-label {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    @media (max-width: 799px) {
+      .menu-btn { display: inline-block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 8px 20px 16px;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links .btn { width: 100%; margin-top: 8px; }
+      .wins-label {
+        position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto;
+        color: var(--green); font-weight: 600; font-size: 15px;
+      }
+    }
     .wins-link {
       display: inline-flex; align-items: center; justify-content: center;
       width: 44px; height: 44px; border-radius: 8px;
       border: 1px solid var(--line); color: var(--green);
+      text-decoration: none;
     }
-    .wins-link svg { width: 20px; height: 20px; }
+    .wins-link svg { width: 20px; height: 20px; flex: none; }
+    @media (max-width: 799px) {
+      .wins-link { width: auto; height: 44px; border: 0; justify-content: flex-start; gap: 10px; padding: 0 8px; }
+    }
     .text-link {
       display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px;
       color: var(--green); font-weight: 600; font-size: 15px; text-decoration: none;
@@ -265,12 +322,14 @@
   <header>
     <div class="wrap bar">
       <a class="name" href="#top">George Tritton-Price</a>
-      <nav class="nav-links" aria-label="Page">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="page-nav" aria-label="Menu"><span></span></button>
+      <nav class="nav-links" id="page-nav" aria-label="Page">
         <a class="text-link" href="https://www.linkedin.com/in/georgetrittonprice/">LinkedIn</a>
         <a class="text-link" href="https://www.instagram.com/georgetrittonprice/">Instagram</a>
         <a class="text-link" href="https://www.1close.ai/free-book">Free book</a>
-        <a class="wins-link" href="#results" aria-label="Wins wall">
+        <a class="wins-link" href="#results">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4.5A2.5 2.5 0 0 0 7 11"/><path d="M17 6h2.5A2.5 2.5 0 0 1 17 11"/></svg>
+          <span class="wins-label">Wins wall</span>
         </a>
         <a class="btn" href="https://www.1close.ai/get-started">Book a call</a>
       </nav>
@@ -1303,3 +1362,21 @@
   <footer>
     <div class="wrap">George Tritton-Price · <a href="https://www.linkedin.com/in/georgetrittonprice/">LinkedIn</a> · <a href="https://www.instagram.com/georgetrittonprice/">Instagram</a> · georgetrittonprice.com</div>
   </footer>
+  <script>
+    (function () {
+      var btn = document.querySelector(".menu-btn");
+      var nav = document.getElementById("page-nav");
+      if (!btn || !nav) return;
+      function setOpen(open) {
+        nav.classList.toggle("open", open);
+        btn.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+      btn.addEventListener("click", function () {
+        setOpen(!nav.classList.contains("open"));
+      });
+      nav.addEventListener("click", function (event) {
+        if (event.target.closest("a")) setOpen(false);
+      });
+    })();
+  </script>
